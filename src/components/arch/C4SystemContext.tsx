@@ -57,11 +57,11 @@ const nodeDetails: Record<string, NodeDetail> = {
 };
 
 function C4Node({
-  id, label, icon: Icon, x, y, width = 180, height = 70,
+  w: width = 180, h: height = 70, id, label, icon: Icon, x, y,
   color = '#10B981', bgColor = 'rgba(16,185,129,0.1)', active, onClick
 }: {
   id: string; label: string; icon: React.ElementType;
-  x: number; y: number; width?: number; height?: number;
+  x: number; y: number; w?: number; h?: number;
   color?: string; bgColor?: string; active: boolean; onClick: () => void;
 }) {
   return (
@@ -146,12 +146,12 @@ export default function C4SystemContext() {
   // Node positions (responsive-friendly centered layout)
   const nodes = {
     platform: { x: 340, y: 200, w: 220, h: 80 },
-    equipe:   { x: 80,  y: 80,  w: 200, h: 70 },
-    admin:    { x: 80,  y: 340, w: 200, h: 70 },
-    dns:      { x: 660, y: 40,  w: 200, h: 70 },
-    email:    { x: 660, y: 200, w: 200, h: 70 },
-    storage:  { x: 660, y: 360, w: 200, h: 70 },
-    landing:  { x: 340, y: 400, w: 220, h: 70 },
+    equipe: { x: 80, y: 80, w: 200, h: 70 },
+    admin: { x: 80, y: 340, w: 200, h: 70 },
+    dns: { x: 660, y: 40, w: 200, h: 70 },
+    email: { x: 660, y: 200, w: 200, h: 70 },
+    storage: { x: 660, y: 360, w: 200, h: 70 },
+    landing: { x: 340, y: 400, w: 220, h: 70 },
   };
 
   return (
@@ -171,7 +171,7 @@ export default function C4SystemContext() {
             Contexto do <span className="text-emerald-400">Sistema</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            Visao macro da plataforma no contexto de usuarios, sistemas externos e 
+            Visao macro da plataforma no contexto de usuarios, sistemas externos e
             atores. Clique em cada elemento para ver detalhes.
           </p>
         </motion.div>
